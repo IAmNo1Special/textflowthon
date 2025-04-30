@@ -9,7 +9,7 @@ dependencies = [
     "rich"
 ]
 authors = [
-    { name = "Malcom Godlike", email = "MalcomGodlike@gmail.com" }
+    { name = "IAmNo1Special", email = "IVmNo1Special@gmail.com" }
 ]
 license = { text = "MIT" }
 keywords = ["text", "animation", "typewriter", "terminal", "console", "effects", "async"]
@@ -26,10 +26,10 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/MalcomGodlike/textflow"
-Documentation = "https://github.com/MalcomGodlike/textflow/blob/main/README.md"
-Repository = "https://github.com/MalcomGodlike/textflow"
-Issues = "https://github.com/MalcomGodlike/textflow/issues"
+Homepage = "https://github.com/IAmNo1Special/textflow"
+Documentation = "https://github.com/IAmNo1Special/textflow/blob/main/README.md"
+Repository = "https://github.com/IAmNo1Special/textflow"
+Issues = "https://github.com/IAmNo1Special/textflow/issues"
 
 [project.optional-dependencies]
 test = [
