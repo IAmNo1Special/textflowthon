@@ -99,8 +99,7 @@ To add a new effect, create a new file in `effects/` and wire it up in `core.py`
 #### Quickstart:
 ```sh
 uv init # Initialize a new project
-uv venv # Create a virtual environment
-uv pip install textflowthon rich # Install dependencies
+uv add textflowthon rich # Install dependencies
 uv run your_script.py # Run your script
 ```
 

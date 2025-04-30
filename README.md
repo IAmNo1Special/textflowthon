@@ -114,6 +114,62 @@ TextFlowThon provides smooth, highly customizable marquee (scrolling text) effec
 - Seamless, natural centering at end of animation
 - Identical API for sync and async usage
 
+---
+
+## Installation
+
+### Recommended: Using `uv`
+
+[`uv`](https://github.com/astral-sh/uv) is a modern Python package and environment manager that is:
+- **Extremely fast** (Rust-powered, up to 100x faster than pip)
+- **All-in-one** (manages venvs, installs, and dependencies)
+- **Reliable** (lockfiles, reproducible builds)
+- **Drop-in replacement** for pip/venv
+
+#### Install `uv`:
+- With pip:
+  ```sh
+  pip install uv
+  ```
+- With Homebrew (macOS/Linux):
+  ```sh
+  brew install astral-sh/uv/uv
+  ```
+- Or download from [GitHub Releases](https://github.com/astral-sh/uv/releases)
+
+#### Quickstart:
+```sh
+uv init # Initialize a new project
+uv add textflowthon rich # Install dependencies
+uv run your_script.py # Run your script
+```
+
+### Manual (pip/venv)
+
+1. Create a virtual environment:
+   ```sh
+   python -m venv .venv
+   ```
+2. Activate it:
+   - Windows:
+     ```sh
+     .venv\Scripts\activate
+     ```
+   - macOS/Linux:
+     ```sh
+     source .venv/bin/activate
+     ```
+3. Install dependencies:
+   ```sh
+   pip install textflowthon rich
+   ```
+4. Run your scripts as usual:
+   ```sh
+   python your_script.py
+   ```
+
+---
+
 ### Usage Example (Sync)
 ```python
 from textflowthon import TextFlowThon
