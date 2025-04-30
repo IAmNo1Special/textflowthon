@@ -1,21 +1,21 @@
 """
-TextFlow
+TextFlowThon
 =======
 Cast your words, typewriter style.
 
-TextFlow is a plug-and-play Python library for animating text in the terminal with a typewriter effect.
+TextFlowThon is a plug-and-play Python library for animating text in the terminal with a typewriter effect.
 
 Features:
 - Color support (per-line or per-character)
 - Customizable speed, width, and cursor
 
 Usage:
-    from textflowthon import TextFlow
-    tc = TextFlow(width=60, delay=0.03, cursor='|', fg='cyan')
+    from textflowthon import TextFlowThon
+    tc = TextFlowThon(width=60, delay=0.03, cursor='|', fg='cyan')
     tc.typewrite("Hello, world!")
 
 You can also use the generator:
-    tc = TextFlow()
+    tc = TextFlowThon()
     for frame in tc.frames("Hello, world!"):
         ...
 
@@ -42,9 +42,9 @@ from .effects.async_marquee import async_marquee
 from .effects.boot_sequence import boot_sequence
 from .effects.async_boot_sequence import async_boot_sequence
 
-class TextFlow:
+class TextFlowThon:
     """
-    TextFlow animates text in the terminal with a typewriter effect.
+    TextFlowThon animates text in the terminal with a typewriter effect.
 
     Args:
         width (int): Maximum line width before wrapping.
@@ -76,12 +76,12 @@ class TextFlow:
         async_boot_sequence(message, file=None, delay=0.06, bios_lines=None, highlight_color="bright_green", bios_color="bright_white", mem_color="cyan", error_color="bright_red", boot_ok=True): Asynchronously simulate a retro terminal boot sequence with BIOS/firmware lines, memory checks, and a final highlighted message.
 
     Example:
-        tc = TextFlow(fg="yellow1", bg="red")
+        tc = TextFlowThon(fg="yellow1", bg="red")
         tc.typewrite("Hello!")
     """
     def __init__(self, width: int = 79, delay: float = 0.05, cursor: str = '|', fg: str = "green4", bg: str = None, font: str = None) -> None:
         """
-        Initialize a TextFlow instance for terminal text animation.
+        Initialize a TextFlowThon instance for terminal text animation.
 
         Args:
             width (int, optional): Maximum line width before wrapping. Default is 79.
@@ -327,10 +327,10 @@ class TextFlow:
     @staticmethod
     def list_effects() -> None:
         """
-        Print the available animation effects in TextFlow.
+        Print the available animation effects in TextFlowThon.
         """
         EFFECTS_DIR = os.path.join(os.path.dirname(__file__), '..', 'textflowthon', 'effects')
-        print("Available animation effects in TextFlow:")
+        print("Available animation effects in TextFlowThon:")
         for fname in sorted(os.listdir(EFFECTS_DIR)):
             if fname.endswith('.py') and not fname.startswith('__'):
                 print(" -", fname.replace('.py', ''))
