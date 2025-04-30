@@ -31,5 +31,5 @@ def derive_rain_trail_colors(fg: str) -> list[str]:
             "#001a00"
         ]
     except Exception:
-        warnings.warn(f"[TextFlow] Could not parse fg color '{fg}', falling back to plain color.")
+        warnings.warn(f"[TextFlowThon] Could not parse fg color '{fg}', falling back to plain color.")
         return [fg, fg, fg, "#003300", "#001a00"]

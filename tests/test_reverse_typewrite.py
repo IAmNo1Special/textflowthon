@@ -1,10 +1,10 @@
 import io
 import asyncio
-from textflow.core import TextFlow
+from textflowthon.core import TextFlowThon
 
 # --- Synchronous Reverse Typewriter Test ---
 def test_reverse_typewrite_basic(monkeypatch):
-    tc = TextFlow(delay=0, fg="orange1", cursor="<", bg=None)
+    tc = TextFlowThon(delay=0, fg="orange1", cursor="<", bg=None)
     buf = io.StringIO()
     monkeypatch.setattr(tc, "_clear_line", lambda out_console: None)
     tc.reverse_typewrite("ReverseMe", file=buf)
@@ -18,7 +18,7 @@ def test_reverse_typewrite_basic(monkeypatch):
 
 # --- Asynchronous Reverse Typewriter Test ---
 def test_async_reverse_typewrite_basic(monkeypatch):
-    tc = TextFlow(delay=0, fg="deep_sky_blue1", cursor="<", bg=None)
+    tc = TextFlowThon(delay=0, fg="deep_sky_blue1", cursor="<", bg=None)
     buf = io.StringIO()
     monkeypatch.setattr(tc, "_clear_line", lambda out_console: None)
     asyncio.run(tc.async_reverse_typewrite("AsyncReverse", file=buf))

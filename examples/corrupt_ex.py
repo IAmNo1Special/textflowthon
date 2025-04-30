@@ -1,8 +1,8 @@
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 import sys
 
 def main():
-    tc = TextFlow(fg="magenta", cursor="_")
+    tc = TextFlowThon(fg="magenta", cursor="_")
     tc.corrupt(
         "CORRUPTION IN PROGRESS!",
         file=sys.stdout,

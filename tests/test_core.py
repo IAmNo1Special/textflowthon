@@ -1,10 +1,10 @@
 import asyncio
-from textflow.core import TextFlow
+from textflowthon.core import TextFlowThon
 import io
 
 # --- Synchronous Tests ---
 def test_typewrite_basic(monkeypatch):
-    tc = TextFlow(width=20, delay=0, fg="green", cursor="*")
+    tc = TextFlowThon(width=20, delay=0, fg="green", cursor="*")
     buf = io.StringIO()
     # Monkeypatch _clear_line to avoid writing ANSI codes to StringIO
     monkeypatch.setattr(tc, "_clear_line", lambda out_console: None)
@@ -15,7 +15,7 @@ def test_typewrite_basic(monkeypatch):
 
 # --- Asynchronous Tests ---
 def test_async_typewrite_basic(monkeypatch):
-    tc = TextFlow(width=20, delay=0, fg="red", cursor="|")
+    tc = TextFlowThon(width=20, delay=0, fg="red", cursor="|")
     buf = io.StringIO()
     monkeypatch.setattr(tc, "_clear_line", lambda out_console: None)
     asyncio.run(tc.async_typewrite("Async test!", file=buf))
@@ -24,7 +24,7 @@ def test_async_typewrite_basic(monkeypatch):
 
 # --- Frames Generator ---
 def test_frames_generator():
-    tc = TextFlow(width=10)
+    tc = TextFlowThon(width=10)
     frames = list(tc.frames("abc"))
     assert frames[0] == "a|"
     assert frames[1] == "ab|"
@@ -35,18 +35,18 @@ def test_frames_generator():
 
 # --- Style Helper ---
 def test_get_style_fg_only():
-    tc = TextFlow(fg="blue")
+    tc = TextFlowThon(fg="blue")
     style = tc._get_style()
     assert "blue" in style
 
 def test_get_style_fg_bg():
-    tc = TextFlow(fg="yellow", bg="magenta")
+    tc = TextFlowThon(fg="yellow", bg="magenta")
     style = tc._get_style()
     assert "yellow" in style and "on magenta" in style
 
 # --- Dynamic Attribute Change ---
 def test_dynamic_style_change(monkeypatch):
-    tc = TextFlow()
+    tc = TextFlowThon()
     tc.fg = "red"
     tc.bg = "white"
     tc.delay = 0
@@ -58,7 +58,7 @@ def test_dynamic_style_change(monkeypatch):
 
 # --- Output to File-Like ---
 def test_output_to_file_like(monkeypatch):
-    tc = TextFlow()
+    tc = TextFlowThon()
     buf = io.StringIO()
     monkeypatch.setattr(tc, "_clear_line", lambda out_console: None)
     tc.typewrite("File-like test", file=buf)

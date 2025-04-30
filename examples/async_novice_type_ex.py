@@ -1,9 +1,9 @@
 import asyncio
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 import sys
 
 async def main():
-    tc = TextFlow(fg="yellow", cursor="_")
+    tc = TextFlowThon(fg="yellow", cursor="_")
     await tc.async_novice_type(
         "Async novice typewriter demo!",
         file=sys.stdout,

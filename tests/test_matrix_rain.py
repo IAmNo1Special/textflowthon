@@ -1,6 +1,6 @@
 import io
 import re
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 import asyncio
 
 ANSI_ESCAPE = re.compile(r'\x1b\[[0-9;]*m')
@@ -9,7 +9,7 @@ def strip_ansi(s):
     return ANSI_ESCAPE.sub('', s)
 
 def test_matrix_rain_basic():
-    tc = TextFlow()
+    tc = TextFlowThon()
     buf = io.StringIO()
     tc.matrix_rain(width=10, height=5, delay=0.001, duration=0.1, file=buf)
     output = buf.getvalue()
@@ -17,7 +17,7 @@ def test_matrix_rain_basic():
     assert any(c in output for c in "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*+-")
 
 def test_matrix_rain_final_reveal():
-    tc = TextFlow()
+    tc = TextFlowThon()
     buf = io.StringIO()
     msg = "HELLO\nWORLD"
     tc.matrix_rain(text=msg, width=10, height=5, delay=0.001, duration=0.1, file=buf)
@@ -39,14 +39,14 @@ def test_matrix_rain_final_reveal():
     assert found, f'WORLD not found in last {N} lines: {lines[-N:]}'
 
 def test_async_matrix_rain_basic():
-    tc = TextFlow()
+    tc = TextFlowThon()
     buf = io.StringIO()
     asyncio.run(tc.async_matrix_rain(width=10, height=5, delay=0.001, duration=0.1, file=buf))
     output = buf.getvalue()
     assert any(c in output for c in "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*+-")
 
 def test_async_matrix_rain_final_reveal():
-    tc = TextFlow()
+    tc = TextFlowThon()
     buf = io.StringIO()
     msg = "HELLO\nWORLD"
     asyncio.run(tc.async_matrix_rain(text=msg, width=10, height=5, delay=0.001, duration=0.1, file=buf))
@@ -68,7 +68,7 @@ def test_async_matrix_rain_final_reveal():
     assert found, f'WORLD not found in last {N} lines: {lines[-N:]}'
 
 def test_async_matrix_rain_colors():
-    tc = TextFlow()
+    tc = TextFlowThon()
     buf = io.StringIO()
     msg = "HELLO\nWORLD"
     # Use a custom fg and msg_fg

@@ -1,5 +1,5 @@
 import sys
-from textflow.effects.boot_sequence import boot_sequence
+from textflowthon.effects.boot_sequence import boot_sequence
 
 if __name__ == "__main__":
     boot_sequence(

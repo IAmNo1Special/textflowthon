@@ -1,11 +1,11 @@
-# TextFlow Documentation
+# TextFlowThon Documentation
 
-Welcome to the official documentation for **TextFlow** – a plug-and-play Python library for animating text output in your terminal with a typewriter effect.
+Welcome to the official documentation for **TextFlowThon** – a plug-and-play Python library for animating text output in your terminal with a typewriter effect.
 
 ---
 
 ## Overview
-TextFlow provides a simple, flexible, and modern API for animating text in both synchronous and asynchronous Python programs. It is ideal for:
+TextFlowThon provides a simple, flexible, and modern API for animating text in both synchronous and asynchronous Python programs. It is ideal for:
 - Command-line tools
 - AI agents and chatbots
 - Demos and interactive scripts
@@ -15,10 +15,10 @@ TextFlow provides a simple, flexible, and modern API for animating text in both 
 
 ## Project Structure
 
-TextFlow is modular. All animation effects are implemented as separate modules in the `textflow/effects/` directory:
+TextFlowThon is modular. All animation effects are implemented as separate modules in the `textflowthon/effects/` directory:
 
 ```
-textflow/
+textflowthon/
 ├── __init__.py
 ├── core.py
 ├── fonts.py
@@ -100,7 +100,7 @@ To add a new effect, create a new file in `effects/` and wire it up in `core.py`
 ```sh
 uv init # Initialize a new project
 uv venv # Create a virtual environment
-uv pip install textflow rich # Install dependencies
+uv pip install textflowthon rich # Install dependencies
 uv run your_script.py # Run your script
 ```
 
@@ -121,7 +121,7 @@ uv run your_script.py # Run your script
      ```
 3. Install dependencies:
    ```sh
-   pip install textflow rich
+   pip install textflowthon rich
    ```
 4. Run your scripts as usual:
    ```sh
@@ -134,18 +134,18 @@ uv run your_script.py # Run your script
 
 ### Synchronous Usage
 ```python
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc = TextFlow(width=50, delay=0.04, fg="cyan", cursor="▌")
+tc = TextFlowThon(width=50, delay=0.04, fg="cyan", cursor="▌")
 tc.typewrite("Hello, world!")
 ```
 
 ### Asynchronous Usage
 ```python
 import asyncio
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc = TextFlow(fg="magenta", delay=0.03)
+tc = TextFlowThon(fg="magenta", delay=0.03)
 asyncio.run(tc.async_typewrite("Async hello!"))
 ```
 
@@ -153,8 +153,8 @@ asyncio.run(tc.async_typewrite("Async hello!"))
 
 ## API Reference
 
-### TextFlow
-- `TextFlow(width=79, delay=0.05, cursor='|', fg='red1', bg=None)`
+### TextFlowThon
+- `TextFlowThon(width=79, delay=0.05, cursor='|', fg='red1', bg=None)`
   - `width`: Maximum line width before wrapping
   - `delay`: Delay between characters (seconds)
   - `cursor`: Cursor character to show during typing
@@ -183,13 +183,13 @@ asyncio.run(tc.async_typewrite("Async hello!"))
 See [usage_guide.md](usage_guide.md) for practical usage patterns, from basic to advanced.
 
 ## Integration Tips
-See [integration.md](integration.md) for integrating TextFlow with other libraries and tools.
+See [integration.md](integration.md) for integrating TextFlowThon with other libraries and tools.
 
 ## Advanced Usage
 See [advanced.md](advanced.md) for advanced patterns and power user tips.
 
 ## Contributing
-See [contributing.md](contributing.md) if you want to help improve TextFlow!
+See [contributing.md](contributing.md) if you want to help improve TextFlowThon!
 
 ---
 

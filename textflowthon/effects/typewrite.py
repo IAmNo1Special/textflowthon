@@ -1,14 +1,17 @@
-import asyncio
+import time
 from rich.text import Text
 from ..fonts import render_figlet
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from ..core import TextFlowThon  # Import TextFlowThon class
 
-# Asynchronous typewriter effect (left-to-right)
-async def async_typewrite(tc: "TextFlow", text: str, file: object = None) -> None:
+
+def typewrite(tc: "TextFlowThon", text: str, file: object = None) -> None:
     """
-    Asynchronously animate text with a typewriter effect.
+    Synchronously animate text with a typewriter effect.
 
     Args:
-        tc (TextFlow): The TextFlow instance (for config and helpers).
+        tc (TextFlowThon): The TextFlowThon instance (for config and helpers).
         text (str): The text to animate.
         file (object, optional): Output stream (default: tc.console's file).
 
@@ -31,9 +34,9 @@ async def async_typewrite(tc: "TextFlow", text: str, file: object = None) -> Non
                     tc._clear_line(out_console)
                     text_obj = Text(sent_text + tc.cursor, style=tc._get_style())
                     out_console.print(text_obj, end='\r', soft_wrap=True)
-                    await asyncio.sleep(tc.delay)
+                    time.sleep(tc.delay)
             tc._clear_line(out_console)
             text_obj = Text(sent_text, style=tc._get_style())
             out_console.print(text_obj, end='\r', soft_wrap=True)
-            await asyncio.sleep(tc.delay)
+            time.sleep(tc.delay)
             out_console.print()  # move to next line

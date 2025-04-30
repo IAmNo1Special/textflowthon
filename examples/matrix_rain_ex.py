@@ -1,8 +1,8 @@
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 import sys
 
 if __name__ == "__main__":
-    tc = TextFlow()
+    tc = TextFlowThon()
     multi_line_message = "TYPECAST\nMATRIX\nRAIN!"
     tc.matrix_rain(
         text=multi_line_message,

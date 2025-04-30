@@ -1,8 +1,8 @@
 import sys
 import asyncio
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc = TextFlow()
+tc = TextFlowThon()
 
 async def main():
     await tc.async_boot_sequence(

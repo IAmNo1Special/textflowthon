@@ -5,7 +5,7 @@ from rich.console import Console
 from rich.live import Live
 
 async def async_marquee(
-    tc: "TextFlow",
+    tc: "TextFlowThon",
     text: str,
     file: Optional[object] = None,
     width: int = 40,

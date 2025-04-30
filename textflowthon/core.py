@@ -10,7 +10,7 @@ Features:
 - Customizable speed, width, and cursor
 
 Usage:
-    from textflow import TextFlow
+    from textflowthon import TextFlow
     tc = TextFlow(width=60, delay=0.03, cursor='|', fg='cyan')
     tc.typewrite("Hello, world!")
 
@@ -329,7 +329,7 @@ class TextFlow:
         """
         Print the available animation effects in TextFlow.
         """
-        EFFECTS_DIR = os.path.join(os.path.dirname(__file__), '..', 'textflow', 'effects')
+        EFFECTS_DIR = os.path.join(os.path.dirname(__file__), '..', 'textflowthon', 'effects')
         print("Available animation effects in TextFlow:")
         for fname in sorted(os.listdir(EFFECTS_DIR)):
             if fname.endswith('.py') and not fname.startswith('__'):

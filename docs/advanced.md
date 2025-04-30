@@ -1,15 +1,15 @@
 # Advanced Usage
 
-Here are advanced patterns and power user tips for TextFlow.
+Here are advanced patterns and power user tips for TextFlowThon.
 
 ---
 
 ## Project Structure
 
-TextFlow is organized for maintainability and extensibility. All animation effects are implemented as separate modules in the `textflow/effects/` directory:
+TextFlowThon is organized for maintainability and extensibility. All animation effects are implemented as separate modules in the `textflowthon/effects/` directory:
 
 ```
-textflow/
+textflowthon/
 ├── __init__.py
 ├── core.py
 ├── fonts.py
@@ -70,10 +70,10 @@ To add a new effect, create a new file in `effects/` and register it in `core.py
 Use the async API to animate output in bots or assistants without blocking:
 ```python
 import asyncio
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
 async def agent():
-    tc = TextFlow(fg="green", delay=0.02)
+    tc = TextFlowThon(fg="green", delay=0.02)
     await tc.async_typewrite("AI: How can I help you today?")
 
 asyncio.run(agent())
@@ -83,10 +83,10 @@ asyncio.run(agent())
 Run several typewriter effects in parallel:
 ```python
 import asyncio
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc1 = TextFlow(fg="yellow", cursor="|")
-tc2 = TextFlow(fg="magenta", cursor="█")
+tc1 = TextFlowThon(fg="yellow", cursor="|")
+tc2 = TextFlowThon(fg="magenta", cursor="█")
 
 async def animate1():
     await tc1.async_typewrite("Bot 1: Hello!")
@@ -102,16 +102,16 @@ asyncio.run(main())
 
 ## Output to Files or Custom Streams
 ```python
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
 with open("output.txt", "w", encoding="utf-8") as f:
-    tc = TextFlow(fg="cyan")
+    tc = TextFlowThon(fg="cyan")
     tc.typewrite("This will be written to a file with animation frames.", file=f)
 ```
 
 ## Dynamic Style Changes
 ```python
-tc = TextFlow()
+tc = TextFlowThon()
 tc.fg = "red"
 tc.delay = 0.01
 tc.cursor = "_"
@@ -120,16 +120,16 @@ tc.typewrite("Now in red and faster!")
 
 ## Custom Fonts (ASCII/FIGlet)
 
-TextFlow supports custom ASCII/FIGlet fonts via the `pyfiglet` library. This allows you to animate text in a variety of fun styles directly in your terminal.
+TextFlowThon supports custom ASCII/FIGlet fonts via the `pyfiglet` library. This allows you to animate text in a variety of fun styles directly in your terminal.
 
 ### Usage
 
-Pass the `font` argument to `TextFlow`:
+Pass the `font` argument to `TextFlowThon`:
 
 ```python
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc = TextFlow(font="slant")
+tc = TextFlowThon(font="slant")
 tc.typewrite("Hello, world!")
 ```
 
@@ -137,11 +137,11 @@ tc.typewrite("Hello, world!")
 - To use a custom `.flf` (FIGlet font) file, place it in a directory and specify its path:
 
 ```python
-tc = TextFlow(font="path/to/customfont.flf")
+tc = TextFlowThon(font="path/to/customfont.flf")
 tc.typewrite("Custom font!")
 ```
 
-If the font cannot be loaded, TextFlow will fall back to normal text and print an error message.
+If the font cannot be loaded, TextFlowThon will fall back to normal text and print an error message.
 
 **Note:** Only ASCII/FIGlet fonts are supported. Vector fonts like `.otf` or `.ttf` are not supported for terminal rendering.
 
@@ -152,22 +152,22 @@ If the font cannot be loaded, TextFlow will fall back to normal text and print a
 
 ## Random Reveal Effect
 
-TextFlow supports a random reveal animation, where characters are revealed in random order. This effect is available in both synchronous and asynchronous forms, and you can specify the mask character for unrevealed positions.
+TextFlowThon supports a random reveal animation, where characters are revealed in random order. This effect is available in both synchronous and asynchronous forms, and you can specify the mask character for unrevealed positions.
 
 ### Synchronous Example
 ```python
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc = TextFlow(fg="yellow", bg="black", delay=0.05, cursor="_")
+tc = TextFlowThon(fg="yellow", bg="black", delay=0.05, cursor="_")
 tc.random_reveal("Random Reveal Example!", mask="*")
 ```
 
 ### Asynchronous Example
 ```python
 import asyncio
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc = TextFlow(fg="bright_cyan", bg="black", delay=0.04, cursor="*")
+tc = TextFlowThon(fg="bright_cyan", bg="black", delay=0.04, cursor="*")
 asyncio.run(tc.async_random_reveal("Async Random Reveal!", mask="*"))
 ```
 
@@ -176,45 +176,45 @@ asyncio.run(tc.async_random_reveal("Async Random Reveal!", mask="*"))
 
 ## Reverse Typewriter Effect
 
-TextFlow supports a reverse typewriter animation, where text appears one character at a time from right to left. This effect is available in both synchronous and asynchronous forms.
+TextFlowThon supports a reverse typewriter animation, where text appears one character at a time from right to left. This effect is available in both synchronous and asynchronous forms.
 
 ### Synchronous Example
 ```python
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc = TextFlow(fg="orange1", bg="black", delay=0.04, cursor="<")
+tc = TextFlowThon(fg="orange1", bg="black", delay=0.04, cursor="<")
 tc.reverse_typewrite("Reverse Typewriter Animation!")
 ```
 
 ### Asynchronous Example
 ```python
 import asyncio
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc = TextFlow(fg="deep_sky_blue1", bg="black", delay=0.03, cursor="<")
+tc = TextFlowThon(fg="deep_sky_blue1", bg="black", delay=0.03, cursor="<")
 asyncio.run(tc.async_reverse_typewrite("Async Reverse Typewriter!"))
 ```
 
-- Both methods use the same styling and cursor options as other TextFlow effects.
+- Both methods use the same styling and cursor options as other TextFlowThon effects.
 
 ## Glitch Effect
 
-TextFlow supports a glitch animation, where text appears with a glitchy effect. This effect is available in both synchronous and asynchronous forms.
+TextFlowThon supports a glitch animation, where text appears with a glitchy effect. This effect is available in both synchronous and asynchronous forms.
 
 ### Synchronous Example
 ```python
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc = TextFlow(fg="red", bg="black", delay=0.05, cursor="_")
+tc = TextFlowThon(fg="red", bg="black", delay=0.05, cursor="_")
 tc.glitch("Glitch Effect Example!")
 ```
 
 ### Asynchronous Example
 ```python
 import asyncio
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc = TextFlow(fg="bright_cyan", bg="black", delay=0.04, cursor="*")
+tc = TextFlowThon(fg="bright_cyan", bg="black", delay=0.04, cursor="*")
 asyncio.run(tc.async_glitch("Async Glitch Effect!"))
 ```
 
@@ -222,22 +222,22 @@ asyncio.run(tc.async_glitch("Async Glitch Effect!"))
 
 ## Matrix-Style Rain Effect
 
-TextFlow supports a Matrix-style rain animation, where characters fall down the screen in columns, similar to the Matrix movie. This effect is available in both synchronous and asynchronous forms. You can reveal a message in bright neon green (msg_fg="#39FF14") for maximum visibility.
+TextFlowThon supports a Matrix-style rain animation, where characters fall down the screen in columns, similar to the Matrix movie. This effect is available in both synchronous and asynchronous forms. You can reveal a message in bright neon green (msg_fg="#39FF14") for maximum visibility.
 
 ### Synchronous Example
 ```python
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc = TextFlow()
+tc = TextFlowThon()
 tc.matrix_rain(text="NEON GREEN!", width=60, height=18, delay=0.04, duration=3.0, msg_fg="#39FF14")
 ```
 
 ### Asynchronous Example
 ```python
 import asyncio
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc = TextFlow()
+tc = TextFlowThon()
 asyncio.run(tc.async_matrix_rain(text="NEON GREEN!", width=60, height=18, delay=0.04, duration=3.0, msg_fg="#39FF14"))
 ```
 
@@ -246,7 +246,7 @@ asyncio.run(tc.async_matrix_rain(text="NEON GREEN!", width=60, height=18, delay=
 - All effects that animate in-place (e.g., typewrite, glitch, reverse, random reveal) use only carriage return (\r), space padding, and flush=True for maximum terminal compatibility. This avoids issues with ANSI escapes on Windows.
 
 ## Integration with Rich Ecosystem
-TextFlow is compatible with the [rich](https://github.com/Textualize/rich) library. You can combine it with progress bars, tables, and more for interactive UIs.
+TextFlowThon is compatible with the [rich](https://github.com/Textualize/rich) library. You can combine it with progress bars, tables, and more for interactive UIs.
 
 ---
 

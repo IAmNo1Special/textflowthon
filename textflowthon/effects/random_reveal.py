@@ -3,14 +3,14 @@ import random
 from rich.text import Text
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
-    from ..core import TextFlow
+    from ..core import TextFlowThon
 
-def random_reveal(tc: "TextFlow", text: str, file: object = None, mask: str = "_") -> None:
+def random_reveal(tc: "TextFlowThon", text: str, file: object = None, mask: str = "_") -> None:
     """
     Synchronously animate text by revealing characters in random order.
 
     Args:
-        tc: The TextFlow instance (for config and helpers).
+        tc: The TextFlowThon instance (for config and helpers).
         text (str): The text to animate.
         file (object, optional): Output stream (default: tc.console's file).
         mask (str, optional): Placeholder character for unrevealed letters (default: '_').

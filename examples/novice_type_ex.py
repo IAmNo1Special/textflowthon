@@ -1,8 +1,8 @@
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 import sys
 
 def main():
-    tc = TextFlow(fg="yellow", cursor="_")
+    tc = TextFlowThon(fg="yellow", cursor="_")
     tc.novice_type(
         "This is a demo of the novice type effect!",
         file=sys.stdout,

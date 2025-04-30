@@ -1,9 +1,9 @@
 import io
-from textflow.core import TextFlow
+from textflowthon.core import TextFlowThon
 
 # --- FIGlet/ASCII Font Tests ---
 def test_typewrite_with_figlet_font(monkeypatch):
-    tc = TextFlow(font="slant", delay=0)
+    tc = TextFlowThon(font="slant", delay=0)
     buf = io.StringIO()
     monkeypatch.setattr(tc, "_clear_line", lambda out_console: None)
     tc.typewrite("TestFont", file=buf)
@@ -16,7 +16,7 @@ def test_typewrite_with_figlet_font(monkeypatch):
     assert any(c in output for c in "_/\\|")
 
 def test_async_typewrite_with_figlet_font(monkeypatch):
-    tc = TextFlow(font="standard", delay=0)
+    tc = TextFlowThon(font="standard", delay=0)
     buf = io.StringIO()
     monkeypatch.setattr(tc, "_clear_line", lambda out_console: None)
     import asyncio

@@ -1,10 +1,10 @@
 import io
 import asyncio
-from textflow.core import TextFlow
+from textflowthon.core import TextFlowThon
 
 # --- Synchronous Random Reveal Test ---
 def test_random_reveal_basic(monkeypatch):
-    tc = TextFlow(delay=0, fg="yellow", cursor="_", bg=None)
+    tc = TextFlowThon(delay=0, fg="yellow", cursor="_", bg=None)
     buf = io.StringIO()
     monkeypatch.setattr(tc, "_clear_line", lambda out_console: None)
     tc.random_reveal("RevealMe", file=buf, mask="*")
@@ -18,7 +18,7 @@ def test_random_reveal_basic(monkeypatch):
 
 # --- Asynchronous Random Reveal Test ---
 def test_async_random_reveal_basic(monkeypatch):
-    tc = TextFlow(delay=0, fg="cyan", cursor="_", bg=None)
+    tc = TextFlowThon(delay=0, fg="cyan", cursor="_", bg=None)
     buf = io.StringIO()
     monkeypatch.setattr(tc, "_clear_line", lambda out_console: None)
     asyncio.run(tc.async_random_reveal("AsyncReveal", file=buf, mask="#"))
@@ -31,7 +31,7 @@ def test_async_random_reveal_basic(monkeypatch):
 
 # --- Mask Character Edge Case ---
 def test_random_reveal_mask(monkeypatch):
-    tc = TextFlow(delay=0, fg="green")
+    tc = TextFlowThon(delay=0, fg="green")
     buf = io.StringIO()
     monkeypatch.setattr(tc, "_clear_line", lambda out_console: None)
     tc.random_reveal("MaskTest", file=buf, mask="-")

@@ -1,12 +1,12 @@
 import asyncio
 from rich.text import Text
 
-async def async_reverse_typewrite(tc: "TextFlow", text: str, file: object = None) -> None:
+async def async_reverse_typewrite(tc: "TextFlowThon", text: str, file: object = None) -> None:
     """
     Asynchronously animate text with a reverse typewriter effect (right-to-left).
 
     Args:
-        tc (TextFlow): The TextFlow instance (for config and helpers).
+        tc (TextFlowThon): The TextFlowThon instance (for config and helpers).
         text (str): The text to animate.
         file (object, optional): Output stream (default: tc.console's file).
 

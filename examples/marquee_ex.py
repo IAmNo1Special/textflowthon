@@ -1,8 +1,8 @@
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 import sys
 
 def main():
-    tc = TextFlow(fg="cyan")
+    tc = TextFlowThon(fg="cyan")
     tc.marquee(
         "TYPECAST MARQUEE EFFECT!",
         file=sys.stdout,

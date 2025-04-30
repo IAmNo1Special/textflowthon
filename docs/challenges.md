@@ -1,12 +1,12 @@
-# Challenges in Building TextFlow
+# Challenges in Building TextFlowThon
 
-Developing TextFlow as a high-quality, user-friendly terminal animation library has presented several interesting challenges. Here are some of the most notable ones so far:
+Developing TextFlowThon as a high-quality, user-friendly terminal animation library has presented several interesting challenges. Here are some of the most notable ones so far:
 
 ---
 
 ## 1. Import Path and Editable Installs
 - **Challenge:** Ensuring that example scripts and documentation examples work seamlessly for both end users (PyPI install) and contributors (local repo).
-- **Solution:** Standardized all imports to `from textflow import TextFlow` and clarified the need for editable (`-e .`) installs when running examples.
+- **Solution:** Standardized all imports to `from textflowthon import TextFlowThon` and clarified the need for editable (`-e .`) installs when running examples.
 
 ## 2. Documentation Clarity and Organization
 - **Challenge:** Striking the right balance between concise onboarding (README) and in-depth guidance (docs), while keeping everything in sync with the codebase.
@@ -33,4 +33,4 @@ Developing TextFlow as a high-quality, user-friendly terminal animation library 
 
 ---
 
-*We hope sharing these challenges helps contributors and users understand the design decisions behind TextFlow, and inspires best practices for other open-source projects!*
+*We hope sharing these challenges helps contributors and users understand the design decisions behind TextFlowThon, and inspires best practices for other open-source projects!*

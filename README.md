@@ -1,4 +1,4 @@
-# TextFlow
+# TextFlowthon
 
 A modular Python library for animating text output in the terminal with typewriter and other effects. Supports sync/async, custom fonts, and more.
 
@@ -6,10 +6,10 @@ A modular Python library for animating text output in the terminal with typewrit
 
 ## Project Structure
 
-TextFlow is fully modular. All animation effects are implemented as separate modules in the `textflow/effects/` directory:
+TextFlowthon is fully modular. All animation effects are implemented as separate modules in the `textflowthon/effects/` directory:
 
 ```
-textflow/
+textflowthon/
 ├── __init__.py
 ├── core.py
 ├── fonts.py
@@ -104,7 +104,7 @@ All effects support both synchronous and asynchronous (asyncio) usage, and outpu
 
 ## Marquee Effect
 
-TextFlow provides smooth, highly customizable marquee (scrolling text) effects for the terminal, both synchronous and asynchronous.
+TextFlowThon provides smooth, highly customizable marquee (scrolling text) effects for the terminal, both synchronous and asynchronous.
 
 ### Features
 - Smooth, in-place scrolling using Rich Live (no ANSI escape codes)
@@ -116,10 +116,10 @@ TextFlow provides smooth, highly customizable marquee (scrolling text) effects f
 
 ### Usage Example (Sync)
 ```python
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 import sys
 
-tc = TextFlow()
+tc = TextFlowThon()
 tc.marquee(
     "TYPECAST MARQUEE EFFECT!",
     file=sys.stdout,
@@ -137,9 +137,9 @@ tc.marquee(
 ```python
 import sys
 import asyncio
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc = TextFlow()
+tc = TextFlowThon()
 
 async def main():
     await tc.async_marquee(
@@ -181,10 +181,10 @@ Simulate a retro terminal boot sequence, including BIOS/firmware lines, memory c
 
 ### Usage Example (Sync)
 ```python
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 import sys
 
-tc = TextFlow()
+tc = TextFlowThon()
 tc.boot_sequence(
     message="WELCOME TO TYPECAST OS!",
     file=sys.stdout,
@@ -201,9 +201,9 @@ tc.boot_sequence(
 ```python
 import sys
 import asyncio
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc = TextFlow()
+tc = TextFlowThon()
 
 async def main():
     await tc.async_boot_sequence(
@@ -242,9 +242,9 @@ See `examples/boot_sequence_ex.py` and `examples/async_boot_sequence_ex.py` for 
 ## Usage
 
 ```python
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc = TextFlow(width=60, delay=0.04, fg="cyan", cursor="▍")
+tc = TextFlowThon(width=60, delay=0.04, fg="cyan", cursor="▍")
 tc.typewrite("Hello, world!")
 
 # Async usage
@@ -252,44 +252,44 @@ import asyncio
 asyncio.run(tc.async_typewrite("Async hello!"))
 
 # Reverse typewriter
-from textflow import TextFlow
-tc = TextFlow()
+from textflowthon import TextFlowThon
+tc = TextFlowThon()
 tc.reverse_typewrite("Backwards!")
 
 # Random reveal
-from textflow import TextFlow
-tc = TextFlow()
+from textflowthon import TextFlowThon
+tc = TextFlowThon()
 tc.random_reveal("Surprise!", mask="*")
 
 # Glitch effect
-from textflow import TextFlow
-tc = TextFlow()
+from textflowthon import TextFlowThon
+tc = TextFlowThon()
 tc.glitch("Glitchy text!", steps=10, delay=0.02)
 
 # Matrix rain
-from textflow import TextFlow
-tc = TextFlow()
+from textflowthon import TextFlowThon
+tc = TextFlowThon()
 tc.matrix_rain(text="NEON GREEN!", width=60, height=18, delay=0.04, duration=3.0, fg="green4", msg_fg="green1")
 
 # Novice Type
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
-tc = TextFlow(fg="yellow", cursor="_")
+tc = TextFlowThon(fg="yellow", cursor="_")
 tc.novice_type("This is a demo of the novice type effect!", error_rate=0.2, max_mistakes=3, correction_delay=0.4, backspace_delay=0.04)
 
 # Async
 import asyncio
-tc = TextFlow(fg="yellow", cursor="_")
+tc = TextFlowThon(fg="yellow", cursor="_")
 asyncio.run(tc.async_novice_type("Async novice typewriter demo!", error_rate=0.2, max_mistakes=3, correction_delay=0.4, backspace_delay=0.04))
 
 # Corrupt Effect
 
-tc = TextFlow(fg="magenta", cursor="_")
+tc = TextFlowThon(fg="magenta", cursor="_")
 tc.corrupt("CORRUPTION IN PROGRESS!", cycles=5, corrupt_sections=4, corrupt_duration=0.18, symbols="@#$%&*?!")
 
 # Async
 import asyncio
-tc = TextFlow(fg="magenta", cursor="_")
+tc = TextFlowThon(fg="magenta", cursor="_")
 asyncio.run(tc.async_corrupt("ASYNC CORRUPTION IN PROGRESS!", cycles=5, corrupt_sections=4, corrupt_duration=0.18, symbols="@#$%&*?!"))
 
 See the [usage guide](docs/usage_guide.md) for more details and advanced examples.

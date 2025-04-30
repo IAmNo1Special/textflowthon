@@ -1,17 +1,17 @@
 # Integration Tips
 
-TextFlow can be integrated with other libraries and tools for powerful terminal experiences.
+TextFlowThon can be integrated with other libraries and tools for powerful terminal experiences.
 
 ---
 
 ## Integrating with Rich Progress Bars
 ```python
 from rich.progress import Progress
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
 progress = Progress()
 progress.start()
-tc = TextFlow()
+tc = TextFlowThon()
 tc.typewrite("Starting a long task...")
 
 with progress:
@@ -22,13 +22,13 @@ with progress:
 tc.typewrite("Task complete!")
 ```
 
-## Using TextFlow in Chatbots or Agents
+## Using TextFlowThon in Chatbots or Agents
 ```python
 import asyncio
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
 async def bot_message():
-    tc = TextFlow(fg="yellow")
+    tc = TextFlowThon(fg="yellow")
     await tc.async_typewrite("Bot: Hi! How can I help?")
 
 asyncio.run(bot_message())
@@ -37,10 +37,10 @@ asyncio.run(bot_message())
 ## Logging Animated Output
 ```python
 import io
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 
 buf = io.StringIO()
-tc = TextFlow()
+tc = TextFlowThon()
 tc.typewrite("Logging this animation!", file=buf)
 # Now buf.getvalue() contains the animated output
 ```

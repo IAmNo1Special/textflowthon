@@ -12,7 +12,7 @@ EXAMPLES = [
     if f.endswith('.py') and f != os.path.basename(__file__)
 ]
 
-print("TextFlow Showoff: Running all example scripts...")
+print("TextFlowThon Showoff: Running all example scripts...")
 print("Starting in 3 seconds. Press Ctrl+C to cancel.")
 time.sleep(3)
 

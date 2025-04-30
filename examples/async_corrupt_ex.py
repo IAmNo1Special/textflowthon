@@ -1,9 +1,9 @@
 import asyncio
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 import sys
 
 async def main():
-    tc = TextFlow(fg="magenta", cursor="_")
+    tc = TextFlowThon(fg="magenta", cursor="_")
     await tc.async_corrupt(
         "ASYNC CORRUPTION IN PROGRESS!",
         file=sys.stdout,

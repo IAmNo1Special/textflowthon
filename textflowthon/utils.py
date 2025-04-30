@@ -1,4 +1,4 @@
-# Utility functions for TextFlow
+# Utility functions for TextFlowThon
 
 def clear_line(console) -> None:
     """

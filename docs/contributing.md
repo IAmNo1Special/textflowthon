@@ -1,4 +1,4 @@
-# Contributing to TextFlow
+# Contributing to TextFlowThon
 
 Thank you for your interest in contributing!
 
@@ -10,8 +10,8 @@ Thank you for your interest in contributing!
 ## Development Setup
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/textflow.git
-   cd textflow
+   git clone https://github.com/yourusername/textflowthon.git
+   cd textflowthon
    ```
 2. Create a virtual environment (or use `uv venv`):
    ```sh
@@ -36,10 +36,10 @@ Thank you for your interest in contributing!
 
 ## Project Structure
 
-TextFlow is modular. All animation effects are implemented as separate modules in the `textflow/effects/` directory:
+TextFlowThon is modular. All animation effects are implemented as separate modules in the `textflowthon/effects/` directory:
 
 ```
-textflow/
+textflowthon/
 ├── __init__.py
 ├── core.py
 ├── fonts.py
@@ -81,7 +81,7 @@ textflow/
 ├── pyproject.toml
 ```
 
-To add a new effect, create a new file in `effects/` and wire it up in `core.py`. All new effects should be added as a separate module in `textflow/effects/` and registered in `core.py`. Ensure new effects use in-place animation with carriage return (\r) and space padding for cross-platform compatibility. Update the README, docs, and add an example script for each new effect.
+To add a new effect, create a new file in `effects/` and wire it up in `core.py`. All new effects should be added as a separate module in `textflowthon/effects/` and registered in `core.py`. Ensure new effects use in-place animation with carriage return (\r) and space padding for cross-platform compatibility. Update the README, docs, and add an example script for each new effect.
 
 ---
 

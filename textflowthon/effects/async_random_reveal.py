@@ -2,12 +2,12 @@ import asyncio
 import random
 from rich.text import Text
 
-async def async_random_reveal(tc: "TextFlow", text: str, file: object = None, mask: str = "_") -> None:
+async def async_random_reveal(tc: "TextFlowThon", text: str, file: object = None, mask: str = "_") -> None:
     """
     Asynchronously animate text by revealing characters in random order.
 
     Args:
-        tc (TextFlow): The TextFlow instance (for config and helpers).
+        tc (TextFlowThon): The TextFlowThon instance (for config and helpers).
         text (str): The text to animate.
         file (object, optional): Output stream (default: tc.console's file).
         mask (str, optional): Placeholder character for unrevealed letters (default: '_').

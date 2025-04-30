@@ -11,7 +11,7 @@ def _parse_color(color: Optional[str]) -> str:
     return color
 
 def marquee(
-    tc: "TextFlow",
+    tc: "TextFlowThon",
     text: str,
     file: Optional[object] = None,
     width: int = 40,

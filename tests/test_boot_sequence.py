@@ -1,9 +1,9 @@
 import sys
-from textflow import TextFlow
+from textflowthon import TextFlowThon
 import asyncio
 
 def test_boot_sequence_sync_runs():
-    tc = TextFlow()
+    tc = TextFlowThon()
     # Should not raise
     tc.boot_sequence(
         message="TEST BOOT SEQUENCE SYNC",
@@ -17,7 +17,7 @@ def test_boot_sequence_sync_runs():
     )
 
 def test_boot_sequence_sync_error():
-    tc = TextFlow()
+    tc = TextFlowThon()
     # Should not raise
     tc.boot_sequence(
         message="ERROR BOOT SYNC",
@@ -27,7 +27,7 @@ def test_boot_sequence_sync_error():
     )
 
 async def _test_async_boot_sequence():
-    tc = TextFlow()
+    tc = TextFlowThon()
     await tc.async_boot_sequence(
         message="TEST BOOT SEQUENCE ASYNC",
         file=sys.stdout,
@@ -40,7 +40,7 @@ async def _test_async_boot_sequence():
     )
 
 async def _test_async_boot_sequence_error():
-    tc = TextFlow()
+    tc = TextFlowThon()
     await tc.async_boot_sequence(
         message="ERROR BOOT ASYNC",
         file=sys.stdout,
