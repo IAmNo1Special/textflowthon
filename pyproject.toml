@@ -11,6 +11,7 @@ dependencies = [
 authors = [
     { name = "Malcom Godlike", email = "MalcomGodlike@gmail.com" }
 ]
+license = { text = "MIT" }
 keywords = ["text", "animation", "typewriter", "terminal", "console", "effects", "async"]
 classifiers = [
     "Development Status :: 3 - Alpha",
